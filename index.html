@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'/>
+		<title>
+			Card
+		</title>
+	
+		<style>
+
+			body
+			{
+				padding: 0;
+				margin: 0;
+				
+				overflow: hidden;
+			}
+
+			#backdrop
+			{
+				padding: 1em;
+			}
+
+			#backdrop > *
+			{
+				opacity: 0;
+			}
+
+
+		</style>
+	</head>
+	
+	<body>
+		<section id='backdrop'>
+			<code>Hey</code>
+			&nbsp;
+			<i style='font-size: 3em; font-family: serif;'>𝔏𝓾𝓵 ❤️</i>
+			&emsp;
+			<span style='font-family: serif; font-size: 1.25em;'>I just wanted to say that,</span>
+			&nbsp;
+			<em style='font-size: 4em;'> I LOVE YOU </em>
+			&nbsp;
+			<sub style='font-size: .75em;'>just</sub>
+			&nbsp;
+			<em>so much!</em>
+			&emsp;
+			<span> And I really wish I could see you right now. </span>
+			&nbsp;
+			<em style='font-size: 3em; font-family: cursive;'>But</em>
+			&nbsp;
+			<code style='color: rgb(100,100, 200);'>I know I'm going to see you</code>
+			&nbsp;
+			<i>s o o n,</i>
+			&emsp;
+			<code>and it'll be</code>
+			&emsp;
+			<em style='font-size: 2.5em; color: green;'>A M A Z I N G</em>
+			&nbsp;
+			<i>because</i>
+			&nbsp;
+			<em>you</em>
+			&nbsp;
+			<span>are</span>
+			&nbsp;
+			<code>my</code>
+			&nbsp;
+			<em style='color: red; text-decoration: underline;'>favourite</em>
+			&nbsp;
+			<i>BEST</i>
+			&nbsp;
+			<span>friend. 💞</span>
+			&nbsp;
+			<i>I love you!</i>
+			&emsp;
+			<code>- Levi</code>
+		</section>
+		
+		<script>
+			let i=0;
+			let backdrop = document.getElementById('backdrop');
+			setInterval( _ => 
+				{
+					backdrop.children[i].style.opacity = 1;
+					if(i > 0)
+						backdrop.children[i-1].style.opacity = 0;	
+					i++;
+				}, 1000);			
+		</script>
+	</body>
+</html>
