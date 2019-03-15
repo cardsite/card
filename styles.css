@@ -1,0 +1,148 @@
+body 
+{ 
+	margin:  0; 
+	padding: 0; 
+
+	overflow: auto;
+}
+
+.scene 
+{
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	perspective: 200rem;	
+	transform-style: preserve-3d;	
+}
+.scene * { transform-style: preserve-3d; }
+
+.card
+{
+	transition: top 1s, transform 1s;
+
+	--card-length:   .1rem;
+	--card-width:   5.5rem;
+	--card-height: 4.51rem;
+
+	width: inherit;
+	height: inherit;
+
+	position: absolute;
+	top:  calc( 50vh -  var(--card-height)/2 );
+	left: calc( 50vw - var(--card-width)/2 );
+
+	transform: rotateY(-20deg);
+	
+}
+
+.card:active
+{
+	transition: top 1s, transform 1s;
+	top:  50vh;
+	transform: rotateY(10deg);
+}
+
+.card:active > .first-page
+{
+	transition: transform 1s;
+	transform-origin: top left;
+	transform: rotateX(180deg);
+}
+
+.card:active > .second-page
+{
+	transition: transform 1s;
+	transform-origin: top left;
+	transform: rotateX(20deg);
+}
+
+.first-page
+{
+	transition: transform 1s;
+	transform-origin: top left;
+	transform: rotateX(30deg);
+}
+
+.second-page
+{
+	transition: transform 1s;
+	transform-origin: top left;
+	transform: rotateX(-30deg)
+}
+
+.page
+{
+
+	position: absolute;
+	top:  0;
+	left: 0;
+
+	width:  var(--card-width);
+	height: var(--card-height);
+
+}
+
+.page > * 
+{ 
+	position: absolute; 
+	background-color: whitesmoke;
+	border: .1px solid lightgrey;
+}
+
+.front, .back, .left, .right, .top, .bottom
+{
+	font-family: serif;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.front > *, .back > *
+{
+	position: relative;
+	top: .5em;
+}
+
+.front, .back
+{
+	top:  0;
+	left: 0;
+	
+	width:  var(--card-width);
+	height: var(--card-height);
+}
+
+.left, .right
+{
+	top:  0;
+	left: calc( var(--card-width)/2 - var(--card-length)/2 );
+
+	width:  var(--card-length);
+	height: var(--card-height);
+}
+
+.top, .bottom
+{
+	top:  calc( var(--card-height)/2 - var(--card-length)/2 );
+	left: 0;
+	
+	width:  var(--card-width);
+	height: var(--card-length);
+}
+
+.front { transform: translateZ( calc( var(--card-length)/2 ) ); }
+.back  { transform: translateZ( calc( var(--card-length)/-2 ) ) scale(1, -1); }
+.left  { transform: rotateY( -90deg ) translateZ( calc( var(--card-width)/2 ) ); }
+.right { transform: rotateY(  90deg ) translateZ( calc( var(--card-width)/2 ) ); }
+.top   { transform: rotateX(  90deg ) translateZ( calc( var(--card-height)/2 ) );}
+.bottom{ transform: rotateX( -90deg ) translateZ( calc( var(--card-height)/2 ) );}
+
+.green
+{
+	color: rgb(100,200,100);
+}
+
+.red
+{
+	color: rgb(200,100,100);
+}
+
