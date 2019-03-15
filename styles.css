@@ -13,6 +13,7 @@ body
 	height: 100vh;
 	perspective: 200rem;	
 	transform-style: preserve-3d;	
+	transform: scale(5);
 }
 .scene * { transform-style: preserve-3d; }
 
