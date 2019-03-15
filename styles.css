@@ -17,7 +17,6 @@ body
 	height: 100vh;
 	perspective: 200rem;	
 	transform-style: preserve-3d;	
-	transform: scale(5);
 }
 .scene * { transform-style: preserve-3d; touch-action: manipulation; }
 
@@ -25,9 +24,9 @@ body
 {
 	transition: top 1s, transform 1s;
 
-	--card-length:   .1rem;
-	--card-width:   5.5rem;
-	--card-height: 4.51rem;
+	--card-length:   .5rem;
+	--card-width:   25rem;
+	--card-height: 20rem;
 
 	width: inherit;
 	height: inherit;
@@ -112,6 +111,8 @@ body
 	top:  0;
 	left: 0;
 	
+	font-size: 5rem;
+
 	width:  var(--card-width);
 	height: var(--card-height);
 }
